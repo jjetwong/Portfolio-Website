@@ -5,7 +5,7 @@ html{
     
 }
 body {
-    background-color: #E5E3DC;
+    background-color: #CBC8B9;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
@@ -17,15 +17,12 @@ body h1{
 }
 
 /*--------------------------Banner------------------------------------*/
-.header{
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    position:relative
-}
-/*flex*/
+
+
+
+/*
+
+flex
 .header img{
     display: inline-block;
     width: 100px;
@@ -43,32 +40,65 @@ body h1{
     margin: 1rem;
     flex-shrink: 2;
 }
+.header .nav li h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #252B2D;
+    font-weight: 700;
+    display: inline-block;
+}
+
+*/
+
+.header{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    position:relative
+}
 .header .nav{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     font-weight: 400;
-    width: 60%;
+    width: 100%;
     flex-shrink: 1;
     text-align: right;
     margin: 1rem;
+    
 }
+
 .header .nav li{
     display: inline-block;
     margin: 0 20px;
     padding: 0;
 }
 
-.header .nav li h2{
+.header a {
+    text-decoration: none;
+}
+
+.navSelector{
+    display: block;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    color: #18251F;
+    color: #252B2D;
     font-weight: 700;
-    display: inline-block;
+    margin: 12.5px 0;
+
 }
-.header .nav li a h2:hover {
-    text-decoration: none;
-    color: #588157;
+
+#nav1 span , #nav2 span, #nav3 span {
+    color: #558564;
 }
+
 
 #darkMode {
     display: block;
@@ -79,39 +109,43 @@ body h1{
     overflow: hidden; 
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    color: #18251F;
+    color: #252B2D;
     font-weight: 700;
     margin: 12.5px 0;
 }
 
 #darkMode:hover {
     text-decoration: none;
-    color: #588157;
+    color: #558564;
 }
 
-#lightMode {
-    display:none;
+.underlineNav {
+    display: inline-block;
     position: relative;
-    right: 10px;
-    background-color: transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden; 
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    color: #18251F;
-    font-weight: 700;
-    margin: 12.5px 0;
-}
-
-#lightMode:hover {
+    color: #252B2D;
     text-decoration: none;
-    color: #588157;
-}
-
+  }
+  
+  .underlineNav::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #558564;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .underlineNav:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 /*--tablet--*/
 @media screen and (max-width: 870px) {
+    
     .header{
         height:4.5rem ;
         flex-wrap: wrap;
@@ -120,7 +154,8 @@ body h1{
     .header .nav {
         display: block;
         width: 100%;
-        text-align: left;
+        align-items: baseline;
+        text-align: right;
         margin: 0;
         padding: 0;
     }
@@ -129,7 +164,7 @@ body h1{
         margin: 0 16px;
     }
 
-    .header .nav li h2{
+    .navSelector, #darkMode {
         font-size: 0.8rem;
     }
 
@@ -142,50 +177,99 @@ body h1{
 
 .main{
     margin-top: 2rem;
-    height: 100vh;
+    height: 90vh;
     width: auto;
     position:relative
 }
-.main .title{
+#mainTitle{
     width: auto;
     font-family: 'Montserrat';
     font-weight: 500;
-    font-size: 5rem;
-    color: #18251F;
-    margin: 2rem 1rem;
+    font-size: 2.5rem;
+    color: #252B2D;
+    margin: 10% 25%;
     line-break: 0;
-}
-.main .title span{
-    color: #FF5C61;
-    font-size: 10rem;
+    line-height: 80px;
 }
 
+#hello {
+    color: #558564;
+    font-size: 2rem;
+}
+#myname {
+    font-size: 2rem;
+}
+
+#iam {
+    font-size: 3.5rem;
+}
+
+
+
 /*--tablet--*/
-@media screen and (max-width: 870px) {
-    .main{
-        height: 500px;
+@media screen and (max-width: 1300px) {
+    .main {
+        height: 600px;
     }
-    .main .title{
+    #mainTitle{
+        margin: 10% 10%;
+        font-size: 2rem;
+        line-height: 70px;
+    }
+    #hello {
+        font-size: 1.5rem;
+    }
+    #myname {
+        font-size: 1.5rem;
+    }
+    
+    #iam {
         font-size: 3rem;
-    }
-    .main .title span{
-        color: #FF5C61;
-        font-size: 6rem;
     }
 
   }
+@media screen and (max-width: 870px) {
+    .main {
+        height: 500px;
+    }
+    #mainTitle{
+        
+        margin: 10% 10%;
+        font-size: 1.5rem;
+        line-height: 60px;
+    }
+    #hello {
+        font-size: 1.2rem;
+    }
+    #myname {
+        font-size: 1.2rem;
+    }
+    
+    #iam {
+        font-size: 2rem;
+    }
+    }
+
+
 
   /*--mobile--*/
   @media screen and  (max-width: 550px) {
     .main{
-        height: 400px;
+        height: 350px;
     }
-    .main .title{
-        font-size:2rem;
+    #mainTitle{
+        font-size:1.5rem;
+        line-height: 40px;
     }
-    .main .title span{
-        color: #FF5C61;
-        font-size: 4rem;
+    #hello {
+        font-size: 1.2rem;
+    }
+    #myname {
+        font-size: 1.2rem;
+    }
+    
+    #iam {
+        font-size: 2rem;
     }
   }
 /*--------------------------About------------------------------------*/
@@ -193,52 +277,114 @@ body h1{
 .about{
     margin: 1.5rem;
     padding: 0.2rem;
-    height: 100vh;
+    height: 90vh;
     width: auto;
-    position:relative
+    position:relative;
+    margin: 0 25%;
+
 }
 .about h1{
     margin: 1rem;
     font-family: 'Montserrat';
-    font-size: 3rem;
-    color: #18251F;
+    font-size: 2rem;
+    color: #252B2D;
     width: 100%;
-    text-align: center;
 }
+
+.about h1 span{
+    color: #558564;
+}
+
 .about .aboutPage{
+    width: 100%;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: center;
 }
 .about .description{
     margin: 1rem;
-    font-family: 'Roboto Slab', serif;
-    font-size: 1.2rem;
-    color: #3A5A40;
-    width: 40%;
+    width: 60%;
+    font-family: 'Roboto', serif;
+    font-size: 1.25rem;
+    color: #252B2D;
 }
 .about img{
     height: 400px;
     
 }
-.about p a{
-    color: #18251F;
-    text-decoration: underline;
-}
-.about p a:hover{
-    color: #588157;
+
+.underlineLink {
+    display: inline-block;
+    position: relative;
+    color: #558564;
     text-decoration: none;
+  }
+  
+  .underlineLink::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #558564;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .underlineLink:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+#skills{
+    width: 100%;
+    margin: 10px 3.1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-around;
+}
+#skills h3{
+    font-family: 'Montserrat';
+    font-size: 1.5rem;
+    color: #252B2D;
+    width: 100%;
+}
+#skillImage{
+    height: 100px;
+    width: auto;
 }
 
+
+@media screen and (max-width: 1300px) {
+    .about{
+        height: 900px;
+        margin: 10% 10%;
+    }
+    .about h1{
+        margin: auto;
+    }
+    .about .aboutPage{
+        flex-wrap: wrap;
+    }
+    .about .description{
+        font-size: 1.2rem;
+        width: 100%;
+    }
+  }
 /*--tablet--*/
 @media screen and (min-width: 551px) and (max-width: 870px) {
     .about{
         height: 900px;
+        margin: 10% 10%;
     }
     .about h1{
-        font-size: 3rem;
+        font-size: 1.7rem;
         margin: auto;
     }
     .about .aboutPage{
@@ -254,9 +400,10 @@ body h1{
   @media screen and (max-width: 550px) {
     .about{
         height: 900px;
+        margin: 10% 10%;
     }
     .about h1{
-        font-size: 2rem;
+        font-size: 1.7rem;
         margin: auto;
     }
     .about .aboutPage{
@@ -272,14 +419,12 @@ body h1{
     margin: 0;
     height: 50vh;
     width: auto;
-    position:relative
-
 }
 .portfolio h1{
     margin: 1rem;
     font-family: 'Montserrat';
     font-size: 3rem;
-    color: #18251F;
+    color: #252B2D;
     width: auto;
     height: auto;
     text-align: center;
@@ -338,10 +483,10 @@ body h1{
   }
 /*--------------------------footer------------------------------------*/
 .contact{
-    font-family: 'Montserrat', serif;
     width: 100%;
     margin: 0;
-
+    font-family: 'Montserrat';
+    font-weight: 600;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -370,8 +515,7 @@ body h1{
     align-content: center;
     width: 285px;
     margin: 0;
-    font-family: 'Roboto Slab', serif;
-    font-weight: 300;
+    color: #252B2D;
 }
 .contact .linkcontainer .email h2{
     font-size: 1rem;
@@ -392,6 +536,12 @@ body h1{
     width: 23px;
 }
 
+.contact p{
+    color: #252B2D;
+}
+.heart {
+    color: #558564;
+}
 /*--tablet--*/
 @media screen and (max-width: 870px) {
     .contact h1{
