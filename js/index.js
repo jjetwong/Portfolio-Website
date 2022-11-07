@@ -45,6 +45,7 @@ function darkMode() {
         portTitle.style.color = "#E5E3DC";
         contact.style.color = "#E5E3DC";
         footer.style.color = "#E5E3DC";
+        document.getElementById("aboutTitle").style.color = "#E5E3DC";
 
         darkModeButton.onmouseover = function() {
             darkModeButton.style.color = '#558564';
@@ -78,7 +79,7 @@ function darkMode() {
         portTitle.style.color = "#252B2D";
         contact.style.color = "#252B2D";
         footer.style.color = "#252B2D";
-
+        document.getElementById("aboutTitle").style.color = "#252B2D";
         darkModeButton.onmouseout = function() {
             darkModeButton.style.color = '#252B2D';
         }
