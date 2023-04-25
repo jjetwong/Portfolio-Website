@@ -25,6 +25,13 @@ body{
     margin: 150px;
 }
 
+#description p{
+  text-align: center;
+  height: 100px;
+  margin: 0;
+}
+
+
 #description a {
   text-decoration: none;
   color: rgb(55, 108, 253);
