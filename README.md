@@ -13,10 +13,3 @@ I will be updating the website with future projects.
 Jin Jet Wong
 linkedin: https://www.linkedin.com/in/jinjetwong
 
-<!--- ## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release --->
